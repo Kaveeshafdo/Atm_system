@@ -89,6 +89,12 @@ public class MainMenu {
                     case 4:
 
                     case 5:
+                    {
+                        try {
+                            new withdrawal_cash(userid);
+                        } catch (Exception e) {
+                        }
+                    }
                 }
             } else {
                 System.out.println("Pin Incorrect");
