@@ -33,8 +33,10 @@ public class account_details {
 
             while (rs.next()) {
                 System.out.println(rs.getString("name")
-                        + " " + rs.getString("nic") + " " + rs.getInt("tel_num") 
-                        + " " + rs.getString("address") + " " + rs.getString("email"));
+                        + " \n " + rs.getString("nic") 
+                        + " \n " + rs.getInt("tel_num") 
+                        + " \n " + rs.getString("address") 
+                        + " \n " + rs.getString("email"));
             }
         } catch (SQLException ex) {
             Logger.getLogger(account_details.class.getName()).log(Level.SEVERE, null, ex);
