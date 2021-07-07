@@ -70,14 +70,22 @@ public class MainMenu {
                     }
                     break;
 
-                    case 2:
+                    case 2: {
                         try {
-                        new account_balance(userid);
-                    } catch (Exception ex) {
-                        Logger.getLogger(MainMenu.class.getName()).log(Level.SEVERE, null, ex);
+                            new account_balance(userid);
+                        } catch (Exception ex) {
+                            Logger.getLogger(MainMenu.class.getName()).log(Level.SEVERE, null, ex);
+                        }
                     }
-                    case 3:
-
+                    break;
+                    case 3: {
+                        try {
+                            new deposit_cash(userid);
+                        } catch (SQLException ex) {
+                            Logger.getLogger(MainMenu.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                    }
+                    break;
                     case 4:
 
                     case 5:
@@ -85,7 +93,10 @@ public class MainMenu {
             } else {
                 System.out.println("Pin Incorrect");
             }
-        } catch (Exception e) {
+
+        
+}
+catch (Exception e) {
         }
 
     }
