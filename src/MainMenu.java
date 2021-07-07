@@ -70,9 +70,14 @@ public class MainMenu {
             break;
 
             case 2:
-
+                
             case 3:
-
+            {try {
+                new deposit_cash(userid);
+            } catch (SQLException ex) {
+                Logger.getLogger(MainMenu.class.getName()).log(Level.SEVERE, null, ex);
+            }}
+            break;
             case 4:
 
             case 5:
