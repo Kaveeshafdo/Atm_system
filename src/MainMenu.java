@@ -94,9 +94,7 @@ public class MainMenu {
                 System.out.println("Pin Incorrect");
             }
 
-        
-}
-catch (Exception e) {
+        } catch (Exception e) {
         }
 
     }
