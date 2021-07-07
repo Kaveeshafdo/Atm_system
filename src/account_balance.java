@@ -13,33 +13,34 @@ import java.util.logging.Logger;
  */
 /**
  *
- * @author Kaveesha FDO 
+ * @author Kaveesha FDO
  */
-public class account_details {
+public class account_balance {
 
     static Connection conn;
     static PreparedStatement sql;
+    int balance = 0;
 
-    public account_details(int i) throws SQLException {
+    public account_balance(int i) throws SQLException {
         int userid = i;
         database_connect cnt = new database_connect();
         cnt.connect();
         conn = cnt.con;
 
         try {
-
-            sql = conn.prepareStatement("select * from user_details WHERE uid = '"+ Integer.toString(userid)+"'");
+            sql = conn.prepareStatement("select * from account_balance WHERE user_details_uid = '" + userid + "'");
             ResultSet rs = sql.executeQuery();
 
             while (rs.next()) {
-                System.out.println(rs.getString("name")
-                        + " " + rs.getString("nic") + " " + rs.getInt("tel_num") 
-                        + " " + rs.getString("address") + " " + rs.getString("email"));
+               // System.out.println(rs.getInt("account_number")
+                 //       + " \n" + rs.getFloat("balance"));
+                int acnum = rs.getInt("account_number");
+                float bal = rs.getFloat("balance");
+                System.out.println("Bank Account Number: "+ acnum);
+                System.out.println("Your Account Balance: "+bal);
             }
-        } catch (SQLException ex) {
+        } catch (Exception ex) {
             Logger.getLogger(account_details.class.getName()).log(Level.SEVERE, null, ex);
         }
-
     }
-
 }

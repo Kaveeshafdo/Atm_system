@@ -48,42 +48,46 @@ public class MainMenu {
         int pinnumber = sc.nextInt();
         try {
             if (cardpin == pinnumber) {
-            System.out.println("Pin correct");
-            int balance = 0;
+                System.out.println("Pin correct");
 
-        System.out.println("                ATM               ");
-        System.out.println("     Check 1: Account Details     ");
-        System.out.println("     Check 2: Account Balance     ");
-        System.out.println("     Check 3: Deposit             ");
-        System.out.println("     Check 4: Transfer Money      ");
-        System.out.println("     Check 5: Withdrawal          ");
-        int n = sc.nextInt();
+                System.out.println("                ATM               ");
+                System.out.println("     Check 1: Account Details     ");
+                System.out.println("     Check 2: Account Balance     ");
+                System.out.println("     Check 3: Deposit             ");
+                System.out.println("     Check 4: Transfer Money      ");
+                System.out.println("     Check 5: Withdrawal          ");
+                System.out.println("                                  ");
+                System.out.println("   Please select check number     ");
+                int n = sc.nextInt();
 
-        switch (n) {
-            case 1: {
-                try {
-                    new account_details(userid);
-                } catch (SQLException ex) {
-                    Logger.getLogger(MainMenu.class.getName()).log(Level.SEVERE, null, ex);
+                switch (n) {
+                    case 1: {
+                        try {
+                            new account_details(userid);
+                        } catch (SQLException ex) {
+                            Logger.getLogger(MainMenu.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                    }
+                    break;
+
+                    case 2:
+                        try {
+                        new account_balance(userid);
+                    } catch (Exception ex) {
+                        Logger.getLogger(MainMenu.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    case 3:
+
+                    case 4:
+
+                    case 5:
                 }
+            } else {
+                System.out.println("Pin Incorrect");
             }
-            break;
-
-            case 2:
-
-            case 3:
-
-            case 4:
-
-            case 5:
-        }
-        } else {
-            System.out.println("Pin Incorrect");
-        }
         } catch (Exception e) {
         }
-        
-        
+
     }
 
     public static void main(String[] args) {
