@@ -86,8 +86,14 @@ public class MainMenu {
                         }
                     }
                     break;
-                    case 4:
-
+                    case 4:{
+                        try {
+                            new transfer_money(userid);
+                        } catch (Exception ex) {
+                            Logger.getLogger(MainMenu.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                    }
+                    break;
                     case 5:
                     {
                         try {
@@ -95,6 +101,7 @@ public class MainMenu {
                         } catch (Exception e) {
                         }
                     }
+                    break;
                 }
             } else {
                 System.out.println("Pin Incorrect");
